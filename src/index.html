@@ -3,10 +3,49 @@
     <head>
         <meta charset="utf-8" />
         <title>BeCode/Mwenbwa</title>
-
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+        <style>
+            #map-container {
+                position: absolute;
+                top:0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        </style>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
     </head>
     <body>
         <div id="app"></div>
+
+        <div id="map-container"></div>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+        <script>
+            var map = L.map('map-container').setView([50.63373, 5.56749], 13.5);
+
+            L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map); 
+            L.marker([50.6445574, 5.5726925]).addTo(map)
+        .bindPopup('Un arbre 🌲<br> Lol')
+        .openPopup();
+
+
+        L.polygon([
+            [50.632179, 5.574141],
+            [50.629445, 5.577791],
+            [50.623331, 5.579234],
+            [50.628840, 5.574825],
+        ]).addTo(map).bindPopup('Park');
+
+
+        L.circle([50.633178, 5.568334], 130, {
+            color: 'gray',
+            strokeWidth: 0.1,
+            fillColor: 'blue',
+            fillOpacity: 0.3,
+
+        }).addTo(map).bindPopup('this is a circle');
+        </script>
     </body>
 </html>
