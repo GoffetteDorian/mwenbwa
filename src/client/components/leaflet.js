@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Map, TileLayer} from "react-leaflet";
-import MarkerClusterGroup from "react-leaflet-markercluster";
+// import MarkerClusterGroup from "react-leaflet-markercluster";
 // import "react-leaflet-markercluster/dist/styles.min.css";
 
 import Tree from "./tree";
@@ -12,11 +12,11 @@ const Leaflet = () => {
         console.log(nearbyTrees);
     }, [nearbyTrees]);
 
-    const handleDrag = (e) => {
+    const handleDrag = e => {
         const map = e.target;
         fetch(`/trees/${map.getCenter().lat}/${map.getCenter().lng}`)
-            .then((res) => res.json())
-            .then((result) => setNearbyTrees(result.data));
+            .then(res => res.json())
+            .then(result => setNearbyTrees(result.data));
     };
 
     // };
@@ -36,7 +36,7 @@ const Leaflet = () => {
                     weight: 0,
                     opacity: 0,
                 }}> */}
-            {nearbyTrees.map((tree) => (
+            {nearbyTrees.map(tree => (
                 <Tree
                     key={`tree-${tree._id}`}
                     coords={[tree.geoloc.lat, tree.geoloc.lon]}

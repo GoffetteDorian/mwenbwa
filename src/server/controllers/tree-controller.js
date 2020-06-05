@@ -10,7 +10,7 @@ export const getAllTrees = async (req, res) => {
             return res.status(400).json({success: false, error: err});
         }
         return res.status(200).json({success: true, data: list});
-    }).catch((err) => console.log(err));
+    }).catch(err => console.log(err));
 };
 
 export const getTreeById = async (req, res) => {
@@ -19,7 +19,7 @@ export const getTreeById = async (req, res) => {
             return res.status(400).json({success: false, error: err});
         }
         return res.status(200).json({success: true, data: tree});
-    }).catch((err) => console.log(err));
+    }).catch(err => console.log(err));
 };
 
 export const getNearbyTrees = async (req, res) => {

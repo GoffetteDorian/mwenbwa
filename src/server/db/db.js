@@ -10,7 +10,7 @@ mongoose
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-    .catch((e) => {
+    .catch(e => {
         console.error("Connection error", e.message);
     });
 

@@ -1,7 +1,7 @@
 import React from "react";
-import {Marker, Popup} from "react-leaflet";
+import {Marker} from "react-leaflet";
 
-const Tree = (props) => {
+const Tree = props => {
     const {coords} = props;
     return (
         <Marker position={coords}>
