@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-require("dotenv").config();
+// require("dotenv").config();
 
 mongoose
     .connect("mongodb://mongo:27017/mwenbwa", {
@@ -15,4 +15,4 @@ mongoose
     });
 
 const db = mongoose.connection;
-module.exports = db;
+export default db;

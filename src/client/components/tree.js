@@ -5,9 +5,9 @@ const Tree = (props) => {
     const {coords} = props;
     return (
         <Marker position={coords}>
-            <Popup>
+            {/* <Popup>
                 <span>{"POPUP"}</span>
-            </Popup>
+            </Popup> */}
         </Marker>
     );
 };

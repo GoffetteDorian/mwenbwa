@@ -7,7 +7,7 @@ const Tree = new Schema(
         date_donnees: {type: String},
         geoloc: {
             lat: {type: Number},
-            long: {type: Number},
+            lon: {type: Number},
         },
         hauteur_totale: {type: Number},
         nom_complet: {type: String},
@@ -17,4 +17,4 @@ const Tree = new Schema(
     {collection: "trees"},
 );
 
-module.exports = mongoose.model("Trees", Tree);
+export default mongoose.model("Trees", Tree);

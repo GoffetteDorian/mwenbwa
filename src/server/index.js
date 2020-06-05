@@ -6,15 +6,16 @@
  * started at 18/05/2020
  */
 
-import React from "react";
 import express from "express";
 import path from "path";
-import {renderToString} from "react-dom/server";
 
-import App from "../client/app";
+import db from "./db/db";
 
-const db = require("./db/db");
-const treeCtrl = require("./controllers/tree-controller");
+import {
+    getAllTrees,
+    getNearbyTrees,
+    getTreeById,
+} from "./controllers/tree-controller";
 
 const {APP_PORT} = process.env;
 
@@ -24,11 +25,11 @@ app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 
 db.on("error", console.error.bind(console, "mongodb connection error!"));
 
-app.get("/map", renderToString(<App />));
+app.get("/trees/:lat/:lon", getNearbyTrees);
 
-app.get("/trees", treeCtrl.getAllTrees);
+app.get("/trees", getAllTrees);
 
-app.get("/trees/:arbotag", treeCtrl.getTreeById);
+app.get("/trees/:arbotag", getTreeById);
 
 // app.get("/trees", (req, res) => {
 //     console.log(`ℹ️  (${req.method.toUpperCase()}) ${req.url}`);
