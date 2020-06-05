@@ -9,6 +9,8 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
 
+import "./css/style.css";
+
 // import HelloWorld from "./components/hello";
 import Leaflet from "./components/leaflet";
 

@@ -12,7 +12,7 @@ const webpack = require("webpack");
 const {resolve} = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = env => {
+module.exports = (env) => {
     const plugins = [
         new webpack.EnvironmentPlugin({
             NODE_ENV: env === "dev" ? "development" : "production",
@@ -71,6 +71,10 @@ module.exports = env => {
                             },
                         },
                     ],
+                },
+                {
+                    test: /\.css$/,
+                    use: ["style-loader", "css-loader"],
                 },
                 {
                     test: /\.js$/,
