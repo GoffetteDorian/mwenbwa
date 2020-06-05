@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {Map, TileLayer} from "react-leaflet";
-import MarkerClusterGroup from "react-leaflet-markercluster";
-import "react-leaflet-markercluster/dist/styles.min.css";
 
 import Tree from "./tree";
 
@@ -12,31 +10,13 @@ const Leaflet = () => {
         console.log(nearbyTrees);
     }, [nearbyTrees]);
 
-    const handleDrag = (e) => {
+    const handleDrag = e => {
         const map = e.target;
         fetch(`/trees/${map.getCenter().lat}/${map.getCenter().lng}`)
-            .then((res) => res.json())
-            .then((result) => setNearbyTrees(result.data));
+            .then(res => res.json())
+            .then(result => setNearbyTrees(result.data));
     };
 
-    const createClusterIcon = (cluster) => {
-        const count = cluster.getChildCount();
-        let size = "LargeXL";
-        if (count < 10) {
-            size = "Small";
-        } else if (count >= 10 && count < 100) {
-            size = "Medium";
-        } else if (count >= 100 && count < 500) {
-            size = "Large";
-        }
-        const options = {
-            cluster: `markerCluster${size}`,
-        };
-        return L.divIcon({
-            html: `<div><span class="markerClusterLabel">${count}</span></div>`,
-            className: `${options.cluster}`,
-        });
-    };
     return (
         <Map onDragend={handleDrag} center={[50.63, 5.58]} zoom={16}>
             <TileLayer
@@ -47,20 +27,12 @@ const Leaflet = () => {
                 subdomains={"abcd"}
                 maxZoom={19}
             />
-            <MarkerClusterGroup
-                iconCreateFunction={createClusterIcon}
-                spiderLegPolylineOptions={{
-                    weight: 0,
-                    opacity: 0,
-                }}>
-                {nearbyTrees.map((tree) => (
-                    <Tree
-                        key={`tree-${tree._id}`}
-                        coords={[tree.geoloc.lat, tree.geoloc.lon]}
-                    />
-                ))}
-            </MarkerClusterGroup>
-            {/* <Tree coords={[50.63, 5.58]} /> */}
+            {nearbyTrees.map(tree => (
+                <Tree
+                    key={`tree-${tree._id}`}
+                    coords={[tree.geoloc.lat, tree.geoloc.lon]}
+                />
+            ))}
         </Map>
     );
 };
