@@ -7,36 +7,21 @@
  */
 
 import * as React from "react";
-// import Slide from "./slide";
-import treeIcon from "../../images/tree-2.png";
-import leafIcon from "../../images/leaf.png";
-import menuIcon from "../../images/open-menu.png";
-import gearIcon from "../../images/gear.png";
+import Slide from "./slide";
+import Timers from "./timers";
+import ReceiveLoseLeaves from "./receiveLoseLeaves";
 
 const HelloWorld = () => (
     <div>
-        <div className={"nav-main"}>
-            <div className={"icons-container"}>
-                <img className={"icons"} src={treeIcon} />
-                <span className={"counter"}>{12}</span>
-                <img className={"icons"} src={leafIcon} />
-                <span className={"counter"}>{232}</span>
-            </div>
-
-            <div className={"timers"}>
-                <span className={"timer"}> {59} </span>
-                <span className={"timer"}> {15} </span>
-            </div>
-
-            <div className={"test"}>
-                <img className={"gearIcon"} src={gearIcon} />
-                <img className={"menuIcon"} src={menuIcon} />
-            </div>
+        <div>
+            <Timers />
         </div>
-
-        {/* <div>
+        <div>
+            <ReceiveLoseLeaves />
+        </div>
+        <div>
             <Slide />
-        </div> */}
+        </div>
     </div>
 );
 
