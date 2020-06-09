@@ -11,18 +11,8 @@ import path from "path";
 
 import db from "./db/db";
 
-import {
-    getAllTrees,
-    getNearbyTrees,
-    getTreeById,
-    getTreeByOwner,
-} from "./controllers/tree-controller";
-
-import {
-    getAllUsers,
-    // getUserById,
-    getUserByUsername,
-} from "./controllers/user-controller";
+const users = require("./routes/user-routes.js");
+const trees = require("./routes/tree-routes.js");
 
 const {APP_PORT} = process.env;
 
@@ -32,18 +22,8 @@ app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 
 db.on("error", console.error.bind(console, "mongodb connection error!"));
 
-// ROUTES
-app.get("/trees/nearby/:lat/:lon", getNearbyTrees);
-
-app.get("/trees", getAllTrees);
-
-app.get("/trees/id/:arbotag", getTreeById);
-
-app.get("/trees/owner/:owner", getTreeByOwner);
-
-app.get("/users", getAllUsers);
-
-app.get("/users/:username", getUserByUsername);
+app.use("/api/users", users);
+app.use("/api/trees", trees);
 
 app.listen(APP_PORT, () =>
     console.log(`🚀 Server is listening on port ${APP_PORT}.`),
