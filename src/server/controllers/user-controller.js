@@ -1,3 +1,10 @@
+/* becodeorg/mwenbwa
+ *
+ * /src/server/controllers/user-controller.js - User controller
+ *
+ * coded by Dorian Goffette
+ * started at 01/06/2020
+ */
 import Users from "../models/user-model";
 
 export const getAllUsers = async (req, res) => {

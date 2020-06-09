@@ -1,3 +1,10 @@
+/* becodeorg/mwenbwa
+ *
+ * /src/server/models/tree-model.js - Tree model
+ *
+ * coded by Dorian Goffette
+ * started at 01/06/2020
+ */
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

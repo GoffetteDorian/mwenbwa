@@ -1,3 +1,11 @@
+/* becodeorg/mwenbwa
+ *
+ * /src/server/db/db.js - Database connection
+ *
+ * coded by Dorian Goffette
+ * started at 01/06/2020
+ */
+
 const mongoose = require("mongoose");
 
 // require("dotenv").config();

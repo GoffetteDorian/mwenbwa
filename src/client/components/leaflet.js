@@ -1,3 +1,11 @@
+/* becodeorg/mwenbwa
+ *
+ * /src/server/controllers/leaflet.js - Leaflet component
+ *
+ * coded by Dorian Goffette
+ * started at 01/06/2020
+ */
+
 import React, {useEffect, useState} from "react";
 import {Map, TileLayer} from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";

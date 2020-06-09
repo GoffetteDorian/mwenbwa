@@ -2,7 +2,7 @@
  *
  * /src/server/index.js - Server entry point
  *
- * coded by leny@BeCode
+ * coded by Dorian Goffette
  * started at 18/05/2020
  */
 

@@ -1,3 +1,11 @@
+/* becodeorg/mwenbwa
+ *
+ * /src/server/controllers/tree-controller.js - Tree controller
+ *
+ * coded by Dorian Goffette
+ * started at 01/06/2020
+ */
+
 // const jeyoDistans = require("jeyo-distans");
 
 import {MAX_DISTANCE} from "../data/constants";
@@ -23,19 +31,6 @@ export const getTreeById = async (req, res) => {
 };
 
 export const getNearbyTrees = async (req, res) => {
-    // console.log("center: ", [req.params.lat, req.params.lon]);
-    // console.log("new coords, gt: ", [
-    //     parseFloat(req.params.lat) - MAX_DISTANCE,
-    //     parseFloat(req.params.lon) - MAX_DISTANCE * parseFloat(req.params.lat),
-    // ]);
-    // console.log("lt: ", [
-    //     parseFloat(req.params.lat) + MAX_DISTANCE,
-    //     parseFloat(req.params.lon) + MAX_DISTANCE * parseFloat(req.params.lat),
-    // ]);
-    // console.log(
-    //     "jeyo: ",
-    //     jeyoDistans([req.params.lat, req.params.lon], [50, 5.567]),
-    // );
     await Trees.find(
         {
             "geoloc.lat": {
@@ -61,7 +56,6 @@ export const getNearbyTrees = async (req, res) => {
 };
 
 export const getTreeByOwner = async (req, res) => {
-    console.log("------------------- OWNER ---------------");
     await Trees.find({owner: req.params.owner}, (err, list) => {
         if (err) {
             return res.status(400).json({success: false, error: err});
