@@ -17,6 +17,12 @@ import {
     getTreeById,
 } from "./controllers/tree-controller";
 
+import {
+    getAllUsers,
+    // getUserById,
+    getUserByUsername,
+} from "./controllers/user-controller";
+
 const {APP_PORT} = process.env;
 
 const app = express();
@@ -30,6 +36,10 @@ app.get("/trees/:lat/:lon", getNearbyTrees);
 app.get("/trees", getAllTrees);
 
 app.get("/trees/:arbotag", getTreeById);
+
+app.get("/users", getAllUsers);
+
+app.get("/users/:username", getUserByUsername);
 
 // app.get("/trees", (req, res) => {
 //     console.log(`ℹ️  (${req.method.toUpperCase()}) ${req.url}`);
