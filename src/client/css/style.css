@@ -8,3 +8,41 @@ body {
     width: 100%;
     height: 100vh;
 }
+
+.markerClusterSmall {
+    border-radius: 20px;
+    font-size: 0.6vw;
+    color: #fff;
+    font-weight: 900;
+    font-family: Open Sans;
+    text-transform: uppercase;
+}
+.markerClusterMedium {
+    border-radius: 40px;
+    font-size: 0.6vw;
+    color: #fff;
+    font-weight: 900;
+    font-family: Open Sans;
+    text-transform: uppercase;
+}
+.markerClusterLarge {
+    border-radius: 70px;
+    font-size: 0.6vw;
+    color: #fff;
+    font-weight: 900;
+    font-family: Open Sans;
+    text-transform: uppercase;
+}
+.markerClusterLargeXL {
+    border-radius: 70px;
+    font-size: 0.6vw;
+    color: #fff;
+    font-weight: 900;
+    font-family: Open Sans;
+    text-transform: uppercase;
+}
+.markerClusterLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

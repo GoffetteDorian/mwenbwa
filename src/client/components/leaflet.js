@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {Map, TileLayer} from "react-leaflet";
+import MarkerClusterGroup from "react-leaflet-markercluster";
 
 import Tree from "./tree";
+// import {Marker} from "leaflet";
 
 const Leaflet = () => {
     const [nearbyTrees, setNearbyTrees] = useState([]);
@@ -17,8 +19,16 @@ const Leaflet = () => {
             .then(result => setNearbyTrees(result.data));
     };
 
+    // const createIcon = () => {
+
+    // }
+
     return (
-        <Map onDragend={handleDrag} center={[50.63, 5.58]} zoom={16}>
+        <Map
+            className={"markercluster-map"}
+            onDragend={handleDrag}
+            center={[50.63, 5.58]}
+            zoom={16}>
             <TileLayer
                 url={
                     "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
@@ -27,12 +37,14 @@ const Leaflet = () => {
                 subdomains={"abcd"}
                 maxZoom={19}
             />
-            {nearbyTrees.map(tree => (
-                <Tree
-                    key={`tree-${tree._id}`}
-                    coords={[tree.geoloc.lat, tree.geoloc.lon]}
-                />
-            ))}
+            <MarkerClusterGroup>
+                {nearbyTrees.map(tree => (
+                    <Tree
+                        key={`tree-${tree._id}`}
+                        coords={[tree.geoloc.lat, tree.geoloc.lon]}
+                    />
+                ))}
+            </MarkerClusterGroup>
         </Map>
     );
 };
