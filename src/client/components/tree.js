@@ -1,13 +1,11 @@
 import React from "react";
-import {Marker} from "react-leaflet";
+import {Marker, Tooltip} from "react-leaflet";
 
 const Tree = props => {
-    const {coords} = props;
+    const {coords, tooltip} = props;
     return (
         <Marker position={coords}>
-            {/* <Popup>
-                <span>{"POPUP"}</span>
-            </Popup> */}
+            <Tooltip>{tooltip}</Tooltip>
         </Marker>
     );
 };

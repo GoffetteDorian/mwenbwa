@@ -14,7 +14,7 @@ const Leaflet = () => {
 
     const handleDrag = e => {
         const map = e.target;
-        fetch(`/trees/${map.getCenter().lat}/${map.getCenter().lng}`)
+        fetch(`/trees/nearby/${map.getCenter().lat}/${map.getCenter().lng}`)
             .then(res => res.json())
             .then(result => setNearbyTrees(result.data));
     };
@@ -42,6 +42,7 @@ const Leaflet = () => {
                     <Tree
                         key={`tree-${tree._id}`}
                         coords={[tree.geoloc.lat, tree.geoloc.lon]}
+                        tooltip={tree.owner}
                     />
                 ))}
             </MarkerClusterGroup>

@@ -13,6 +13,7 @@ const Tree = new Schema(
         nom_complet: {type: String},
         diametre_cime: {type: Number},
         circonf: {type: Number},
+        owner: {type: String},
     },
     {collection: "trees"},
 );

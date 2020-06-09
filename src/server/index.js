@@ -15,6 +15,7 @@ import {
     getAllTrees,
     getNearbyTrees,
     getTreeById,
+    getTreeByOwner,
 } from "./controllers/tree-controller";
 
 import {
@@ -31,20 +32,19 @@ app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 
 db.on("error", console.error.bind(console, "mongodb connection error!"));
 
-app.get("/trees/:lat/:lon", getNearbyTrees);
+// ROUTES
+app.get("/trees/nearby/:lat/:lon", getNearbyTrees);
 
 app.get("/trees", getAllTrees);
 
-app.get("/trees/:arbotag", getTreeById);
+app.get("/trees/id/:arbotag", getTreeById);
+
+app.get("/trees/owner/:owner", getTreeByOwner);
 
 app.get("/users", getAllUsers);
 
 app.get("/users/:username", getUserByUsername);
 
-// app.get("/trees", (req, res) => {
-//     console.log(`ℹ️  (${req.method.toUpperCase()}) ${req.url}`);
-//     res.send("trees");
-// });
 app.listen(APP_PORT, () =>
     console.log(`🚀 Server is listening on port ${APP_PORT}.`),
 );
