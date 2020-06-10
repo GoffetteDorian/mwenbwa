@@ -22,6 +22,7 @@ export const getAllTrees = async (req, res) => {
 };
 
 export const getTreeById = async (req, res) => {
+    console.log(req.body);
     await Trees.findOne({arbotag: req.params.arbotag}, (err, tree) => {
         if (err) {
             return res.status(400).json({success: false, error: err});

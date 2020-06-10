@@ -9,9 +9,14 @@
 const express = require("express");
 const router = express.Router();
 
-import {getAllUsers, getUserByUsername} from "../controllers/user-controller";
+import {
+    getAllUsers,
+    getUserByUsername,
+    getUserById,
+} from "../controllers/user-controller";
 
 router.get("/all", getAllUsers);
-router.get("/:username", getUserByUsername);
+router.get("/username/:username", getUserByUsername);
+router.get("/id/:id", getUserById);
 
 module.exports = router;

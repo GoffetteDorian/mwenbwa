@@ -22,7 +22,7 @@ const Leaflet = () => {
 
     const handleDrag = e => {
         const map = e.target;
-        fetch(`/trees/nearby/${map.getCenter().lat}/${map.getCenter().lng}`)
+        fetch(`/api/trees/nearby/${map.getCenter().lat}/${map.getCenter().lng}`)
             .then(res => res.json())
             .then(result => setNearbyTrees(result.data));
     };
