@@ -12,6 +12,7 @@ import ReactDOM from "react-dom";
 import "./css/style.css";
 
 // import HelloWorld from "./components/hello";
-import Leaflet from "./components/leaflet";
+// import Leaflet from "./components/map/leaflet";
+import Login from "./components/home/login";
 
-ReactDOM.render(<Leaflet />, document.querySelector("#app"));
+ReactDOM.render(<Login />, document.querySelector("#app"));
