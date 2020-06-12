@@ -27,8 +27,10 @@ function receiveLeaves() {
     fifteenMinutes();
 }
 
+// for 15m you should use 900000
+
 function fifteenMinutes() {
-    setTimeout(receiveLeaves, 11000);
+    setTimeout(receiveLeaves, 3000);
 }
 fifteenMinutes();
 
@@ -41,8 +43,9 @@ function loseLeaves() {
     hour();
 }
 
+// for hour you should use 3600000
 function hour() {
-    setTimeout(loseLeaves, 20000);
+    setTimeout(loseLeaves, 5000);
 }
 hour();
 

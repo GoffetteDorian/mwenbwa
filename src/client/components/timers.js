@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {Component} from "react";
 import menuIcon from "../../images/open-menu.png";
 import gearIcon from "../../images/gear.png";
@@ -18,8 +19,8 @@ class Timers extends Component {
             <div className={"nav-main"}>
                 <ReceiveLoseLeaves />
                 <div className={"timers"}>
-                    <span className={"timer"}> {countHour} </span>
-                    <span className={"timer"}> {countMinutes} </span>
+                    <span className={"timer"}> {} </span>
+                    <span className={"timer"}> {} </span>
                 </div>
                 <div className={"test"}>
                     <img className={"gearIcon"} src={gearIcon} />
