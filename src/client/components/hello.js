@@ -10,9 +10,9 @@ import * as React from "react";
 // eslint-disable-next-line no-unused-vars
 import Slide from "./slide";
 import Timers from "./timers";
-import ReceiveLoseLeaves from "./receiveLoseLeaves";
+// import ReceiveLoseLeaves from "./receiveLoseLeaves";
 import ColorPicker from "./color-picker";
-import Welcome from "./welcome";
+// import Welcome from "./welcome";
 
 const HelloWorld = () => (
     <div>
@@ -20,9 +20,6 @@ const HelloWorld = () => (
             {/* <Welcome /> */}
             <ColorPicker />
             <Timers />
-        </div>
-        <div>
-            <ReceiveLoseLeaves />
         </div>
     </div>
 );
