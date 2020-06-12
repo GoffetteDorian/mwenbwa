@@ -1,8 +1,8 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-no-literals */
 import * as React from "react";
-import About from "../../images/about.png";
-import Mwenbwatree from "../../images/tree-3.png";
+import About from "../../../images/about.png";
+import Mwenbwatree from "../../../images/tree-3.png";
 
 const Welcome = () => (
     <div className={"mwenbwa-main"}>

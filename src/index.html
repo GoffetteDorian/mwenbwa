@@ -1,136 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+        />
         <title>BeCode/Mwenbwa</title>
-        <link type="text/css" href="./css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-        <style>
+        <link type="text/css" href="./css/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Piedra&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        />
 
-          * {
-            margin: 0;
-          }
-
-            #map-container {
-                position: absolute;
-                top: 7.9em;
-                right: 0;
-                bottom: 0;
-                left: 0;
-            }
-            .nav-main {
-              padding: 0 1em 0 1em;
-              display: flex;
-              justify-content: space-between;
-              height: 2em;
-              background-color: #57606f;
-            }
-            .icons {
-              height: 1em;
-              margin-top: 0.5em;
-              margin-right: 0.5em;
-              margin-left: 0.5em;
-            }
-            .gearIcon {
-              padding-top: 0.5em;
-              height: 1em;
-              padding-left: 1em;
-            }
-            .menuIcon {
-              padding-top: 0.5em;
-              height: 1em;
-              padding-left: 1em;
-            }
-            .counter {
-              color: white;
-            }
-            .timers {
-              padding-top: 0.5em;
-              height: 1em;
-              color: white;
-            }
-
-            /* slide start here */
-            .slide-main {
-              position: absolute;
-              right: 0;
-              margin-top:0.5em ;
-              height: 40em;
-              background-color: rgb(54, 51, 51);
-              width: 18%;
-            }
-
-            .slide-head {
-              display: flex;
-              justify-content: space-evenly;
-              height: 1.5em;
-            }
-            .slide-head button {
-              color: white;
-              padding-top: 0.2em;
-              border: none;
-              background-color: rgb(54, 51, 51);
-              cursor: pointer;
-            }
-            .slide-head span {
-              border-right:2px solid white ;
-            }
-            #color-picker {
-              width: 30%;
-            }
-        </style>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin=""
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+        />
     </head>
     <body>
         <div id="app"></div>
-
-        <div id="map-container"></div>
-        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-        <script src="https://unpkg.com/leaflet.markercluster@1.1.0/dist/leaflet.markercluster.js"></script>
-        <script src="./plugins/arbustum.js"></script>
-        <script>
-            var map = L.map('map-container').setView([50.63373, 5.56749], 13.5);
-            var popup = L.popup();
-            var markers = L.markerClusterGroup();
-
-            L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map); 
-
-            const treeIcon = L.icon({
-            iconUrl: 'tree-2.png',
-            iconSize: [25, 37],
-            iconAnchor: [25, 16]
-            });
-
-            
-            var myMarkers = L.geoJson(geojson, {
-              style : function(feature) {
-                return {
-                  color : '#000',
-                  weight: 0.8
-                }
-               
-              },
-              pointToLayer: function(geoJsonPoint, latlng){
-                return L.marker(latlng, {
-                    icon: treeIcon
-                  });
-              },
-              onEachFeature: function(feature, layer) {
-                if(feature.properties.nom_complet==='Platanus x acerifolia') {
-                  layer.bindPopup('<b>Tree Name: </b>' + feature.properties.nom_complet + '<br> <b>Tree value</b> <br> <b>Owner:</b> example <br><b> History of buys:</b> <br> <b>Any player can also leave a comment on a tree</b>');
-                } 
-                else {
-                  layer.bindPopup('<b>Tree Name: </b>' + feature.properties.nom_complet + '<br> <b>Tree value</b> <br> <b>Owner:</b> example <br><b> History of buys:</b> <br> <b>Any player can also leave a comment on a tree</b>');
-                }
-              },
-             
-            });
-            markers.addLayer(myMarkers);
-            map.addLayer(markers);
-
-        </script>
+        <script
+            defer
+            src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+        ></script>
     </body>
 </html>
