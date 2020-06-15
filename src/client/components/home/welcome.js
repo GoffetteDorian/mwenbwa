@@ -9,7 +9,7 @@ const Welcome = () => (
         <div className={"mwenbwa-container"}>
             <div className={"mwenbwa-name"}>
                 <h1 className={"mwenbwa"}> MWENBWA</h1>
-                <h2> liége </h2>
+                <h2> liège </h2>
             </div>
             <div className={"mwenbwa-button"}>
                 <button className={"mwenbwa-signin"}> Sign In </button>
