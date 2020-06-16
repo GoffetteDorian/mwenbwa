@@ -13,8 +13,10 @@ import "../css/welcome.css";
 
 import "./css/style.css";
 
-import Welcome from "./components/home/welcome";
+//import Welcome from "./components/home/welcome";
+//import Design from "../client/components/design";
+import Map from "../client/components/map/leaflet";
 // import Leaflet from "./components/map/leaflet";
 // import Login from "./components/home/login";
 
-ReactDOM.render(<Welcome />, document.querySelector("#app"));
+ReactDOM.render(<Map />, document.querySelector("#app"));

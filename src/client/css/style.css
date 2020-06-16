@@ -47,3 +47,97 @@ body {
     justify-content: center;
     align-items: center;
 }
+.navbar {
+    z-index: -2;
+}
+.navbar-toggler {
+    position: relative;
+    left: 95%;
+}
+#leaf {
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+#cercleLeaf {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #9a9da0;
+    position: relative;
+    right: 95%;
+    border-color: #9a9da0;
+    background-color: white;
+}
+
+#rectangleLeaf {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    left: 20px;
+    bottom: 20px;
+    z-index: -1;
+}
+
+#number-leaf {
+    color: black;
+    z-index: 3;
+    position: relative;
+    left: 50%;
+    top: 5px;
+}
+
+#cercleTree {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #9a9da0;
+    position: relative;
+    right: 50%;
+    border-color: #9a9da0;
+    background-color: white;
+}
+
+#tree {
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+#timerContener {
+    position: relative;
+    left: 100px;
+}
+#timer {
+    color: white;
+    font-size: 2em;
+    position: relative;
+    top: 10px;
+}
+
+#profil-picture {
+    border-radius: 20px;
+    border: 2px solid #9a9da0;
+}
+
+#button-profil {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100px;
+}
+.button {
+    height: 30px;
+    width: 110px;
+    position: relative;
+    bottom: 100px;
+    left: 110px;
+    border: 2px solid #9a9da0;
+}
+
+/*.colorPlayer {
+    background-color: teal;
+}
+*/
