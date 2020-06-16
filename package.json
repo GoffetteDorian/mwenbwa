@@ -46,8 +46,10 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-color": "^2.18.1",
     "react-dom": "^16.13.1",
     "react-loader": "^2.4.7"
