@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import {GithubPicker} from "react-color";
 
-const Signup = props => {
-    const {register} = props;
+const Signup = ({register}) => {
     const [values, setValues] = useState({
         email: "",
         username: "",
@@ -42,7 +41,7 @@ const Signup = props => {
         setValues({...values, color: color.hex});
     };
 
-    console.log(values);
+    // console.log(values);
     return (
         <form onSubmit={handleSubmit} className={"box"}>
             <div className={"field"}>
