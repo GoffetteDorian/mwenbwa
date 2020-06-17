@@ -1,5 +1,7 @@
 import Users from "../models/user-model";
-// const bcrypt = require("bcrypt");
+import {ROUNDS} from "../data/constants";
+
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const users = [
@@ -113,19 +115,41 @@ export const test = (req, res) => {
     return res.send("tree added succesfully");
 };
 
-export const signup = (req, res) => {
-    const user = new Users({
-        username: req.body.username,
-        password: req.body.password,
-        email: req.body.email,
-        role: "user",
-        color: req.body.color,
-    });
-    user.save((err, resp) => {
-        if (err) {
-            return resp.status(500).send({error: err});
+export const signup = async (req, res) => {
+    try {
+        const password = await bcrypt.hash(req.body.password, ROUNDS);
+        const user = new Users({
+            username: req.body.username,
+            password,
+            email: req.body.email,
+            role: "user",
+            color: req.body.color,
+        });
+
+        const newUser = await user.save();
+
+        return res.status(201).send({user: newUser});
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send({error});
+    }
+};
+
+export const signin = async (req, res) => {
+    try {
+        const {email, username, password, role, color} = await Users.findOne({
+            email: req.body.email,
+        });
+        if (!email) {
+            return res.status(404).send({message: "No user found"});
         }
-        return resp.sendStatus(201);
-    });
-    return res.sendStatus(201);
+        const validation = await bcrypt.compare(req.body.password, password);
+        if (!validation) {
+            return res.status(401).send({message: "Wrong password"});
+        }
+        return res.status(200).send({email, username, password, role, color});
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send({error});
+    }
 };
