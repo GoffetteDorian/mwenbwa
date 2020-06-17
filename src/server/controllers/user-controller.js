@@ -33,18 +33,3 @@ export const getUserByUsername = async (req, res) => {
         return res.status(200).json({success: true, data: user});
     }).catch(err => console.log(err));
 };
-
-export const addUser = req => {
-    const user = new Users({
-        username: req.body.username,
-        password: req.body.password,
-        email: req.body.email,
-        role: "member",
-        color: req.body.color,
-    });
-    user.save((err, res) => {
-        if (err) {
-            res.status(500).send({error: err});
-        }
-    });
-};

@@ -8,8 +8,10 @@ import {
     newToken,
     tokens,
     test,
+    signup,
 } from "../controllers/auth-controller";
 
+router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", logout);
 router.post("/token", newToken);

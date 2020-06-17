@@ -1,3 +1,4 @@
+import Users from "../models/user-model";
 // const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -110,4 +111,21 @@ export const test = (req, res) => {
     const atrees = req.body;
     tmptrees.push(atrees);
     return res.send("tree added succesfully");
+};
+
+export const signup = (req, res) => {
+    const user = new Users({
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email,
+        role: "user",
+        color: req.body.color,
+    });
+    user.save((err, resp) => {
+        if (err) {
+            return resp.status(500).send({error: err});
+        }
+        return resp.sendStatus(201);
+    });
+    return res.sendStatus(201);
 };
