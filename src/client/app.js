@@ -10,6 +10,7 @@ import * as React from "react";
 import ReactDOM from "react-dom";
 import "../css/style.css";
 import "../css/welcome.css";
+import "../css/leaderboard.css";
 
 import HelloWorld from "./components/hello";
 
