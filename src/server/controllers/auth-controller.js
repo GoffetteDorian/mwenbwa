@@ -137,7 +137,14 @@ export const signup = async (req, res) => {
 
 export const signin = async (req, res) => {
     try {
-        const {email, username, password, role, color} = await Users.findOne({
+        const {
+            id,
+            email,
+            username,
+            password,
+            role,
+            color,
+        } = await Users.findOne({
             email: req.body.email,
         });
         if (!email) {
@@ -145,9 +152,15 @@ export const signin = async (req, res) => {
         }
         const validation = await bcrypt.compare(req.body.password, password);
         if (!validation) {
-            return res.status(401).send({message: "Wrong password"});
+            return res
+                .status(401)
+                .send({token: null, message: "Wrong password"});
         }
-        return res.status(200).send({email, username, password, role, color});
+        const token = jwt.sign({id}, accessTokenSecret, {expiresIn: 86400});
+
+        return res
+            .status(200)
+            .send({id, email, username, password, role, color, token});
     } catch (error) {
         console.log(error);
         return res.status(500).send({error});

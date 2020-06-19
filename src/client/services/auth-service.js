@@ -12,7 +12,19 @@ export const signup = ({email, username, password, color, role = "user"}) =>
     });
 
 export const signin = ({email, password}) =>
-    axios.post(`${URL}signin`, {
-        email,
-        password,
-    });
+    axios
+        .post(`${URL}signin`, {
+            email,
+            password,
+        })
+        .then(res => {
+            localStorage.setItem("user", JSON.stringify(res.data));
+        });
+
+export const getCurrentUser = () => {
+    const user = localStorage.getItem("user");
+    if (user) {
+        return JSON.parse(user);
+    }
+    return null;
+};

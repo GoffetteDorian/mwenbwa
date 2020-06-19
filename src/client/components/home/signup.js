@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {GithubPicker} from "react-color";
 
-const Signup = ({register}) => {
+const Signup = ({register, login}) => {
     const [values, setValues] = useState({
         email: "",
         username: "",
@@ -26,6 +26,15 @@ const Signup = ({register}) => {
         register(values)
             .then(() => {
                 console.log("Register ok");
+            })
+            .then(() => {
+                login({email, password}).then(
+                    () => {
+                        window.location.reload();
+                        console.log("Login ok");
+                    },
+                    err => console.log(err),
+                );
             })
             .catch(err => {
                 console.log(err);

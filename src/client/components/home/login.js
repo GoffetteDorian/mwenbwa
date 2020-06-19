@@ -8,7 +8,7 @@ const Login = () => (
     <div className={"container"}>
         <div className={"columns is-centered"}>
             <div className={"column is-4-desktop is-3-widescreen"}>
-                <Signup register={signup} />
+                <Signup register={signup} login={signin} />
             </div>
             <div className={"column is-4-desktop is-3-widescreen"}>
                 <Signin login={signin} />

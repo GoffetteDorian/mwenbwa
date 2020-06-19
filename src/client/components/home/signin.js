@@ -9,9 +9,9 @@ const Signin = ({login}) => {
             return;
         }
         login(values)
-            .then(user => {
-                console.log(user.data);
+            .then(() => {
                 console.log("Signed in");
+                window.location.reload();
             })
             .catch(error => {
                 console.log(error);
