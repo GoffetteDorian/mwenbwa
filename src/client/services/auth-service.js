@@ -18,7 +18,7 @@ export const signin = ({email, password}) =>
             password,
         })
         .then(res => {
-            localStorage.setItem("user", JSON.stringify(res.data));
+            localStorage.setItem("user", JSON.stringify(res.data.token));
         });
 
 export const getCurrentUser = () => {
