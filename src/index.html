@@ -94,14 +94,17 @@
             var popup = L.popup();
             var markers = L.markerClusterGroup();
 
-            L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
+            L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}..png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map); 
 
             const treeIcon = L.icon({
             iconUrl: 'tree-2.png',
             iconSize: [25, 37],
-            iconAnchor: [25, 16]
+            iconAnchor: [25, 16],
+            className:'leaflet-tree-icon',
+            shadowUrl: null,
+            shadowSize: null,
             });
 
             

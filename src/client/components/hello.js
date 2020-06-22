@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* becodeorg/mwenbwa
  *
  * /src/client/components/hello.js - Hello Component
@@ -8,17 +7,19 @@
  */
 
 import * as React from "react";
-import Slide from "./slide";
-import Timers from "./timers";
-import ReceiveLoseLeaves from "./receiveLoseLeaves";
-import ColorPicker from "./color-picker";
-import Leaderboard from "./leaderboard";
+// import Slide from "./slide";
+// import Timers from "./timers";
+// import ReceiveLoseLeaves from "./receiveLoseLeaves";
+// import ColorPicker from "./color-picker";
+// import Leaderboard from "./leaderboard";
 import Welcome from "./welcome";
+// import Gamelog from "./gamelog";
+// import Clock from "./clock";
 
 const HelloWorld = () => (
     <div>
         <div>
-            <Leaderboard />
+            <Welcome />
             {/* <ColorPicker /> */}
             {/* <Timers /> */}
         </div>
