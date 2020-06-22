@@ -9,6 +9,8 @@
 import express from "express";
 import path from "path";
 
+require("dotenv").config();
+
 import db from "./db/db";
 
 const bodyParser = require("body-parser");

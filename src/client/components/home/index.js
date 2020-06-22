@@ -9,6 +9,7 @@ import Login from "./login";
 const Index = () => {
     // eslint-disable-next-line no-unused-vars
     const [user, setUser] = useState(getCurrentUser());
+    console.log("Index: ", user);
 
     if (user) {
         return (
