@@ -16,6 +16,9 @@ import "./css/style.css";
 //import Welcome from "./components/home/welcome";
 //import Design from "../client/components/design";
 import Map from "../client/components/map/leaflet";
+//import Clock from "../client/components/timerNow";
+//import Profil from "../profil";
+// import Inscription from "../inscription";
 // import Leaflet from "./components/map/leaflet";
 // import Login from "./components/home/login";
 

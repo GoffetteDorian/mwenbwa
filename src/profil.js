@@ -1,8 +1,7 @@
 /* eslint-disable react/button-has-type */
 import React, {Component} from "react";
-import image from "./images/avatar.png";
-import arbre from "./images/arbre.png";
-import leaf from "./images/leaf.png";
+import arbre from "./images/treeG.png";
+import leaf from "./images/leafG.png";
 class Profil extends Component {
     render() {
         return (
@@ -39,7 +38,7 @@ class Profil extends Component {
                     <h1 id={"profilNameG"}>{"BONJOUR Geoffrey!"}</h1>
                     <img
                         id={"imageProfil"}
-                        src={image}
+                        src={arbre}
                         alt={"Probleme"}
                         height={"100px"}
                         hidth={"100px"}

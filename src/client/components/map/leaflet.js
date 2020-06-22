@@ -11,13 +11,16 @@ import React, {useEffect, useState} from "react";
 import {Map, TileLayer} from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Tree from "./tree";
-import imageFeuille from "../../../images/LeafG.png";
-import imageArbre from "../../../images/TreeG.png";
-import imageAvatar from "../../../images/Avatar.png";
+// import imageFeuille from "../../../images/leafG.png";
+// import imageArbre from "../../images/treeG.png";
+import imageAvatar from "../../../images/avatar.png";
+import ReceiveLoseLeaves from "../receiveLoseLeaves";
+import Clock from "../timernow";
 // import {Marker} from "leaflet";
 
 const Leaflet = () => {
     const [nearbyTrees, setNearbyTrees] = useState([]);
+
     // console.log("RENDER");
     useEffect(() => {
         console.log(nearbyTrees);
@@ -63,13 +66,15 @@ const Leaflet = () => {
                         className={"collapse"}
                         id={"navbarToggleExternalContent"}>
                         <div className={"bg-dark p-4"}>
-                            <img
-                                src={imageAvatar}
-                                alt={"profil-picture"}
-                                id={"profil-picture"}
-                                height={"100px"}
-                                width={"100px"}
-                            />
+                            <div className={"image-profil"}>
+                                <img
+                                    src={imageAvatar}
+                                    alt={"profil-picture"}
+                                    id={"profil-picture"}
+                                    height={"100px"}
+                                    width={"100px"}
+                                />
+                            </div>
                             <div id={"button-profil"}>
                                 <button type={"submit"} className={"button"}>
                                     {"Profil"}
@@ -94,32 +99,9 @@ const Leaflet = () => {
                             <span className={"navbar-toggler-icon"} />
                         </button>
                         <div id={"timerContener"}>
-                            <p id={"timer"}>{"10:10:10"}</p>
+                            <p id={"timer"}>{<Clock />}</p>
                         </div>
-                        <div id={"cercleTree"}>
-                            <img
-                                id={"leaf"}
-                                src={imageArbre}
-                                alt={"tree"}
-                                height={"25px"}
-                                width={"25px"}
-                            />
-                            <div id={"rectangleLeaf"}>
-                                <p id={"number-leaf"}>{"6"}</p>
-                            </div>
-                        </div>
-                        <div id={"cercleLeaf"}>
-                            <img
-                                id={"tree"}
-                                src={imageFeuille}
-                                alt={"tree"}
-                                height={"25px"}
-                                width={"25px"}
-                            />
-                            <div id={"rectangleLeaf"}>
-                                <p id={"number-leaf"}>{"2"}</p>
-                            </div>
-                        </div>
+                        <ReceiveLoseLeaves />
                     </nav>
                 </div>
             </div>

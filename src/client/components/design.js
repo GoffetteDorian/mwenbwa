@@ -2,7 +2,7 @@
 import React /*useEffect, useState*/ from "react";
 import imageFeuille from "../../images/LeafG.png";
 import imageArbre from "../../images/TreeG.png";
-import imageAvatar from "../../images/Avatar.png";
+import imageAvatar from "../../images/AvatarG.png";
 
 const Design = () => (
     <div>
