@@ -11,15 +11,16 @@ import * as React from "react";
 // import Timers from "./timers";
 // import ReceiveLoseLeaves from "./receiveLoseLeaves";
 // import ColorPicker from "./color-picker";
-// import Leaderboard from "./leaderboard";
-import Welcome from "./welcome";
+import Leaderboard from "./leaderboard";
+// import Welcome from "./welcome";
+// import Popup from "./modal";
 // import Gamelog from "./gamelog";
 // import Clock from "./clock";
 
 const HelloWorld = () => (
     <div>
         <div>
-            <Welcome />
+            <Leaderboard />
             {/* <ColorPicker /> */}
             {/* <Timers /> */}
         </div>
