@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 import {GithubPicker} from "react-color";
 
 const Signup = ({register, login}) => {
@@ -136,11 +137,13 @@ const Signup = ({register, login}) => {
             </div>
 
             <div className={"field"} style={{textAlign: "center"}}>
-                <input
-                    type={"submit"}
-                    className={"button is-success"}
-                    value={"Register"}
-                />
+                <Link to={"/ntmfdp"}>
+                    <input
+                        type={"submit"}
+                        className={"button is-success"}
+                        value={"Register"}
+                    />
+                </Link>
             </div>
         </form>
     );

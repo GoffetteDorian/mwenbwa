@@ -16,14 +16,14 @@ import "../css/modal.css";
 
 import "./css/style.css";
 
-// import Index from "./components/home/index";
+import Index from "./components/home/index";
 // import Timers from "./components/timers";
 // import ReceiveLoseLeaves from "./components/receiveLoseLeaves";
 // import ColorPicker from "./components/color-picker";
 // import Leaderboard from "./components/leaderboard";
-import Welcome from "./components/home/welcome";
+// import Welcome from "./components/home/welcome";
 // import Popup from "./components/modal";
 // import Gamelog from "./components/gamelog";
 // import Clock from "./clock";
 
-ReactDOM.render(<Welcome />, document.querySelector("#app"));
+ReactDOM.render(<Index />, document.querySelector("#app"));
