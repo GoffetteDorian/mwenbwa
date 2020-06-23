@@ -11,12 +11,14 @@ const Welcome = () => (
                     <h2> {"liége"} </h2>
                 </div>
                 <div className={"mwenbwa-button"}>
-                    <Link to={"/login"}>
+                    <Link to={"./signup"}>
+                        <button>{" Sign Up "}</button>
+                    </Link>
+                    <Link to={"/signin"}>
                         <button className={"mwenbwa-signin"}>
                             {" Sign In "}
                         </button>
                     </Link>
-                    <button>{" Sign Up "}</button>
                 </div>
             </div>
         </div>

@@ -6,6 +6,8 @@ import {getCurrentUser} from "../../services/auth-service";
 import Leaflet from "../map/leaflet";
 import Welcome from "../home/welcome";
 import Login from "./login";
+import Signin from "./signin";
+import Signup from "./signup";
 
 const Index = () => {
     // eslint-disable-next-line no-unused-vars
@@ -36,6 +38,8 @@ const Index = () => {
                 <Route exact path={"/ntmfdp"} component={Leaflet} />
                 <Route exact path={"/"} component={Welcome} />
                 <Route exact path={"/login"} component={Login} />
+                <Route exact path={"/signin"} component={Signin} />
+                <Route exact path={"/signup"} component={Signup} />
             </Router>
         </>
     );

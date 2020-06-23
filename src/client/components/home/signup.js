@@ -53,99 +53,101 @@ const Signup = ({register, login}) => {
 
     // console.log(values);
     return (
-        <form onSubmit={handleSubmit} className={"box"}>
-            <div className={"field"}>
-                <label className={"label"}>{"Email"}</label>
-                <div className={"control has-icons-left"}>
-                    <input
-                        type={"email"}
-                        placeholder={"e.g. email@gmail.com"}
-                        className={"input"}
-                        name={"email"}
-                        onChange={handleChange}
-                        required
-                    />
-                    <span className={"icon is-small is-left"}>
-                        <i className={"fa fa-envelope"} />
-                    </span>
+        <div className={"signup-container"}>
+            <form onSubmit={handleSubmit} className={"box"}>
+                <div className={"field"}>
+                    <label className={"label"}>{"Email"}</label>
+                    <div className={"control has-icons-left"}>
+                        <input
+                            type={"email"}
+                            placeholder={"e.g. email@gmail.com"}
+                            className={"input"}
+                            name={"email"}
+                            onChange={handleChange}
+                            required
+                        />
+                        <span className={"icon is-small is-left"}>
+                            <i className={"fa fa-envelope"} />
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div className={"field"}>
-                <label className={"label"}>{"Username"}</label>
-                <div className={"control has-icons-left"}>
-                    <input
-                        type={"username"}
-                        placeholder={"e.g. Azhro"}
-                        className={"input"}
-                        name={"username"}
-                        onChange={handleChange}
-                        required
-                    />
-                    <span className={"icon is-small is-left"}>
-                        <i className={"fas fa-user"} />
-                    </span>
+                <div className={"field"}>
+                    <label className={"label"}>{"Username"}</label>
+                    <div className={"control has-icons-left"}>
+                        <input
+                            type={"username"}
+                            placeholder={"e.g. Azhro"}
+                            className={"input"}
+                            name={"username"}
+                            onChange={handleChange}
+                            required
+                        />
+                        <span className={"icon is-small is-left"}>
+                            <i className={"fas fa-user"} />
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div className={"field"}>
-                <label className={"label"}>{"Password"}</label>
-                <div className={"control has-icons-left"}>
-                    <input
-                        type={"password"}
-                        placeholder={"*******"}
-                        className={"input"}
-                        name={"password"}
-                        onChange={handleChange}
-                        required
-                        // autoComplete={"new-password"}
-                    />
-                    <span className={"icon is-small is-left"}>
-                        <i className={"fa fa-lock"} />
-                    </span>
+                <div className={"field"}>
+                    <label className={"label"}>{"Password"}</label>
+                    <div className={"control has-icons-left"}>
+                        <input
+                            type={"password"}
+                            placeholder={"*******"}
+                            className={"input"}
+                            name={"password"}
+                            onChange={handleChange}
+                            required
+                            // autoComplete={"new-password"}
+                        />
+                        <span className={"icon is-small is-left"}>
+                            <i className={"fa fa-lock"} />
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div className={"field"}>
-                <label className={"label"}>{"Confirm password"}</label>
-                <div className={"control has-icons-left"}>
-                    <input
-                        type={"password"}
-                        placeholder={"*******"}
-                        className={"input"}
-                        name={"passwordConfirm"}
-                        onChange={handleChange}
-                        required
-                        // autoComplete={"new-password"}
-                    />
-                    <span className={"icon is-small is-left"}>
-                        <i className={"fa fa-lock"} />
-                    </span>
+                <div className={"field"}>
+                    <label className={"label"}>{"Confirm password"}</label>
+                    <div className={"control has-icons-left"}>
+                        <input
+                            type={"password"}
+                            placeholder={"*******"}
+                            className={"input"}
+                            name={"passwordConfirm"}
+                            onChange={handleChange}
+                            required
+                            // autoComplete={"new-password"}
+                        />
+                        <span className={"icon is-small is-left"}>
+                            <i className={"fa fa-lock"} />
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div className={"field"}>
-                <label className={"label"}>{"Color"}</label>
-                <div
-                    style={{
-                        width: "100%",
-                        display: "flex",
-                        justifyContent: "center",
-                    }}>
-                    <GithubPicker
-                        width={212}
-                        triangle={"hide"}
-                        onChangeComplete={handleChangeComplete}
-                    />
+                <div className={"field"}>
+                    <label className={"label"}>{"Color"}</label>
+                    <div
+                        style={{
+                            width: "100%",
+                            display: "flex",
+                            justifyContent: "center",
+                        }}>
+                        <GithubPicker
+                            width={212}
+                            triangle={"hide"}
+                            onChangeComplete={handleChangeComplete}
+                        />
+                    </div>
                 </div>
-            </div>
 
-            <div className={"field"} style={{textAlign: "center"}}>
-                <Link to={"/ntmfdp"}>
-                    <input
-                        type={"submit"}
-                        className={"button is-success"}
-                        value={"Register"}
-                    />
-                </Link>
-            </div>
-        </form>
+                <div className={"field"} style={{textAlign: "center"}}>
+                    <Link to={"/ntmfdp"}>
+                        <input
+                            type={"submit"}
+                            className={"button is-success"}
+                            value={"Register"}
+                        />
+                    </Link>
+                </div>
+            </form>
+        </div>
     );
 };
 

@@ -1,5 +1,5 @@
 html {
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .mwenbwa-main {
     height: 100vh;
@@ -99,7 +99,7 @@ html {
     }
 }
 .mwenbwa-signin {
-    margin-right: 3em;
+    margin-left: 3em;
 }
 .mwenbwa-button button {
     border: none;
