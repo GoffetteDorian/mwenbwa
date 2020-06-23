@@ -1,7 +1,9 @@
+// eslint-disable consistent-return
 import Users from "../models/user-model";
 // import Trees from "../models/tree-model";
 import {ROUNDS} from "../data/constants";
 
+import {setTreeOwner} from "./tree-controller";
 // require("dotenv").config();
 
 const bcrypt = require("bcryptjs");
@@ -20,12 +22,19 @@ export const signup = async (req, res) => {
             color: req.body.color,
         });
 
-        const newUser = await user.save();
-
-        return res.status(201).send({user: newUser});
+        await user.save((error, response) => {
+            if (error) {
+                return res.status(500).send({message: error});
+            }
+            setTreeOwner(response);
+            setTreeOwner(response);
+            setTreeOwner(response);
+            return true;
+        });
+        return res.status(201).send({message: "User created"});
     } catch (error) {
         console.log(error);
-        return res.status(500).send({error});
+        return res.status(500).send({message: error});
     }
 };
 

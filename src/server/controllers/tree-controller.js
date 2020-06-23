@@ -71,7 +71,7 @@ export const setTreeOwner = async (req, res) => {
         // console.log(tree);
         const newTree = await Trees.updateOne(
             {owner: null},
-            {$set: {owner: req.body.owner}},
+            {$set: {owner: req.username}},
         );
         return res.status(201).send({tree: newTree});
     } catch (error) {
