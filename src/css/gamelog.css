@@ -1,0 +1,47 @@
+.gamelog-container {
+    padding-top: 1em;
+    width: 25em;
+    margin: 1em auto;
+}
+
+.gamelog-header {
+    width: 100%;
+    height: 3em;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    text-align: center;
+    padding-top:1em ;
+    border-radius: 5px 5px 0px 0px;
+    font-family: 'Piedra', cursive;
+    letter-spacing: 0.2em;
+    font-size: 1em;
+}
+
+.gamelog-info {
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+    background-color: rgb(228, 228, 228);
+    color: rgb(92, 91, 91);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.2em;
+    font-family: 'Piedra', cursive;
+}
+
+.gamelog-user {
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+    background-color: rgb(228, 228, 228);
+    color: rgb(92, 91, 91);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px black dotted;
+    
+}
+.gamlelog-name {
+    margin-left: 0.3em;
+}
+
+.gamelog-user-actions {
+    margin-right: 0.3em;
+}

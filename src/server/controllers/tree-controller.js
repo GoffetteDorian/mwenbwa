@@ -64,3 +64,35 @@ export const getTreeByOwner = async (req, res) => {
         return res.status(200).json({success: true, data: list});
     }).catch(err => console.log(err));
 };
+
+export const setTreeOwner = async (req, res) => {
+    try {
+        // const tree = await Trees.findOne({owner: null});
+        // console.log(tree);
+        const newTree = await Trees.updateOne(
+            {owner: null},
+            {$set: {owner: req.body.owner}},
+        );
+        return res.status(201).send({tree: newTree});
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+};
+
+// DB SET UP
+export const updateAllOwners = async (req, res) => {
+    try {
+        console.log("Updating");
+        const response = await Trees.update(
+            {},
+            {$set: {owner: null}},
+            {multi: true},
+        );
+        console.log("resp");
+        return res
+            .status(201)
+            .send({message: "Updated all owners", data: response});
+    } catch (error) {
+        return res.status(500).send({error});
+    }
+};

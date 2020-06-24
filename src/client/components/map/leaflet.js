@@ -14,7 +14,7 @@ import Tree from "./tree";
 // import imageFeuille from "../../../images/leafG.png";
 // import imageArbre from "../../images/treeG.png";
 import imageAvatar from "../../../images/avatar.png";
-import ReceiveLoseLeaves from "../receiveLoseLeaves";
+import ReceiveLoseLeaves from "../receiveloseleaves";
 import Clock from "../timernow";
 // import {Marker} from "leaflet";
 

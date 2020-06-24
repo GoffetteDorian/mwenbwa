@@ -134,6 +134,9 @@ body {
     height: 30px;
     width: 110px;
     border: 2px solid #9a9da0;
+    position: relative;
+    left: 25px;
+    padding: 1px 1px 1px 1px;
 }
 .login-form {
     width: 385px;
@@ -283,11 +286,9 @@ body {
     top: 40px;
 }
 
-/*.colorPlayer {
+.colorPlayer {
     background-color: teal;
 }
-   
-*/
 
 #divCercle {
     position: relative;
@@ -296,5 +297,5 @@ body {
 
 .bg-dark {
     display: flex;
-    height: 7.5em;
+    height: 9em;
 }

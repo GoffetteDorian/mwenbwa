@@ -1,0 +1,54 @@
+.m-popup {
+    width: 28em;
+    margin: 1em auto;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 1em;
+    border-radius: 5px;
+
+}
+
+.m-popup:overlay {
+    background-color:red;
+}
+
+.modal-close{
+    text-align: center;
+    margin: auto;
+}
+
+.modal-open {
+    text-align: center;
+}
+
+.modal button {
+    border: none;
+    padding: 0.6em 1.3em;
+    background-color: gray;
+    border-radius: 2px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+
+}
+
+.modal button:hover {
+    background-color: rgb(36, 36, 36);
+    box-shadow: 0 0 1em rgb(40, 41, 40), 0 0 1.5em rgb(40, 41, 40), 0 0 2em rgb(40, 41, 40);
+    color: white;
+}
+
+.modal-close button {
+    border: none;
+    padding: 0.6em 1.3em;
+    background-color: gray;
+    border-radius: 2px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+}
+
+.modal-close button:hover {
+    background-color: rgb(36, 36, 36);
+    box-shadow: 0 0 1em rgb(41, 40, 40), 0 0 1.5em rgb(40, 41, 40), 0 0 2em rgb(40, 41, 40);
+    color: white;
+}

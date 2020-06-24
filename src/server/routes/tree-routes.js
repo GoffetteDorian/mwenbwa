@@ -14,11 +14,15 @@ import {
     getNearbyTrees,
     getTreeById,
     getTreeByOwner,
+    setTreeOwner,
+    updateAllOwners,
 } from "../controllers/tree-controller";
 
 router.get("/nearby/:lat/:lon", getNearbyTrees);
 router.get("/all", getAllTrees);
 router.get("/id/:arbotag", getTreeById);
 router.get("/owner/:owner", getTreeByOwner);
+router.post("/set/owner/", setTreeOwner);
+router.get("/update/", updateAllOwners);
 
 module.exports = router;
