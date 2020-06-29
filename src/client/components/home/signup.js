@@ -1,8 +1,9 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import {GithubPicker} from "react-color";
+import {signup, signin} from "../../services/auth-service";
 
-const Signup = ({register, login}) => {
+const Signup = () => {
     const [values, setValues] = useState({
         email: "",
         username: "",
@@ -12,6 +13,7 @@ const Signup = ({register, login}) => {
     });
 
     const handleSubmit = event => {
+        console.log("Inside submit");
         event.preventDefault();
         const {email, username, password, passwordConfirm, color} = values;
         if (
@@ -24,14 +26,14 @@ const Signup = ({register, login}) => {
         ) {
             return;
         }
-        register(values)
+        signup(values)
             .then(() => {
                 console.log("Register ok");
             })
             .then(() => {
-                login({email, password}).then(
+                signin({email, password}).then(
                     () => {
-                        window.location.reload();
+                        window.location.replace("/");
                         console.log("Login ok");
                     },
                     err => console.log(err),
@@ -45,6 +47,7 @@ const Signup = ({register, login}) => {
     const handleChange = event => {
         const {name, value} = event.target;
         setValues({...values, [name]: value});
+        console.log(values);
     };
 
     const handleChangeComplete = color => {
@@ -138,13 +141,11 @@ const Signup = ({register, login}) => {
                 </div>
 
                 <div className={"field"} style={{textAlign: "center"}}>
-                    <Link to={"/ntmfdp"}>
-                        <input
-                            type={"submit"}
-                            className={"button is-success"}
-                            value={"Register"}
-                        />
-                    </Link>
+                    <input
+                        type={"submit"}
+                        className={"button is-success"}
+                        value={"Register"}
+                    />
                 </div>
             </form>
         </div>

@@ -8,23 +8,23 @@
 
 import * as React from "react";
 import ReactDOM from "react-dom";
-import "../css/style.css";
 import "../css/welcome.css";
-import "../css/leaderboard.css";
-import "../css/gamelog.css";
+// import "../css/leaderboard.css";
+// import "../css/gamelog.css";
 import "../css/modal.css";
 import "../css/signin-up.css";
+import "../css/gameleader.css";
 import "./css/style.css";
 
-import Index from "./components/home/index";
+// import Index from "./components/home/index";
 // import Timers from "./components/timers";
 // import ReceiveLoseLeaves from "./components/receiveLoseLeaves";
 // import ColorPicker from "./components/color-picker";
 // import Leaderboard from "./components/leaderboard";
 // import Welcome from "./components/home/welcome";
 // import Popup from "./components/modal";
-// import Gamelog from "./components/gamelog";
+// import Gamelog from "./components/gamelog";\
 // import Clock from "./clock";
-//import Profil from "../profil";
+import GameLeader from "./components/gameleader";
 
-ReactDOM.render(<Index />, document.querySelector("#app"));
+ReactDOM.render(<GameLeader />, document.querySelector("#app"));

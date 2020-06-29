@@ -1,0 +1,102 @@
+
+.gameinfo-container {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    height: 18em;
+    width: 60%;
+    margin: auto;
+    margin-top: 12em;
+    display: flex;
+    background-color: rgba(1, 1, 1, 0.8);
+    box-shadow: 0 0 1em rgb(1, 1, 1), 0 0 1.5em rgb(1, 1, 1),
+    0 0 2em rgb(1, 1, 1);
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.l-container, .gamelog-container {
+    width: 25em;
+    margin: 1em auto;
+    padding-top: 0.2em;
+}
+
+.gamelog-header,.leadheader  {
+    width: 100%;
+    height: 2em;
+    color: white;
+    text-align: center;
+    padding-top:0 ;
+    font-family: 'Piedra', cursive;
+    letter-spacing: 0.2em;
+    font-size: 1em;
+}
+
+.gamelog-info {
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.2em;
+    font-family: 'Piedra', cursive;
+}
+
+.gamelog-user {
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px rgb(0, 0, 0)   dotted;
+    transition: 0.2s;
+}
+
+.gamelog-user:hover {
+    font-size: 20px;
+    border-bottom: 1px rgb(233, 166, 166) solid;
+}
+
+.gamlelog-name {
+    margin-left: 0.3em;
+}
+
+.gamelog-user-actions {
+    margin-right: 0.3em;
+}
+
+
+.score-container {
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.2em;
+    font-family: 'Piedra', cursive;
+}
+
+.l-users {
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px rgb(0, 0, 0) dotted;
+    transition: 0.2s;
+}
+.l-users:hover {
+    font-size: 20px;
+    border-bottom: 1px rgb(233, 166, 166) solid;
+}
+.gamelog-container {
+    margin-left: 0em;
+    padding-left: 0;
+}
+.l-container {
+    margin-right: 0;
+    padding-right: 0;
+}

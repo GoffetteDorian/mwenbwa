@@ -20,7 +20,7 @@ function Welcome() {
                         <Link to={"./signup"}>
                             <button>{" Sign Up "}</button>
                         </Link>
-                        <Link to={"/signin"}>
+                        <Link to={"./signin"}>
                             <button className={"mwenbwa-signin"}>
                                 {" Sign In "}
                             </button>

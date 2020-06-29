@@ -1,17 +1,19 @@
 import React, {useState} from "react";
+import {signin} from "../../services/auth-service";
 
-const Signin = ({login}) => {
+const Signin = () => {
     const [values, setValues] = useState({email: "", password: ""});
     const handleSubmit = event => {
+        console.log("Submit signin");
         event.preventDefault();
         const {email, password} = values;
         if (!email || !password) {
             return;
         }
-        login(values)
+        signin(values)
             .then(() => {
+                window.location.replace("/");
                 console.log("Signed in");
-                window.location.reload();
             })
             .catch(error => {
                 console.log(error);
