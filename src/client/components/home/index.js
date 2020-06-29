@@ -5,6 +5,8 @@ import {getCurrentUser} from "../../services/auth-service";
 
 import Leaflet from "../map/leaflet";
 import Welcome from "../home/welcome";
+import Gamelog from "../gamelog";
+import GameLeader from "../gameleader";
 import Signin from "./signin";
 import Signup from "./signup";
 
@@ -36,6 +38,8 @@ const Index = () => {
             <>
                 <Router>
                     <Route exact path={"/"} component={Leaflet} />
+                    <Route exact path={"/logs"} component={Gamelog} />
+                    <Route exact path={"/ladder"} component={GameLeader} />
                 </Router>
             </>
         );

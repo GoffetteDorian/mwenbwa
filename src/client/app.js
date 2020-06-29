@@ -8,6 +8,10 @@
 
 import * as React from "react";
 import ReactDOM from "react-dom";
+<<<<<<< HEAD
+=======
+// import "../css/style.css";
+>>>>>>> e90be79... Creating routes for logs & ladder
 import "../css/welcome.css";
 // import "../css/leaderboard.css";
 // import "../css/gamelog.css";
@@ -16,7 +20,7 @@ import "../css/signin-up.css";
 import "../css/gameleader.css";
 import "./css/style.css";
 
-// import Index from "./components/home/index";
+import Index from "./components/home/index";
 // import Timers from "./components/timers";
 // import ReceiveLoseLeaves from "./components/receiveLoseLeaves";
 // import ColorPicker from "./components/color-picker";
@@ -25,6 +29,6 @@ import "./css/style.css";
 // import Popup from "./components/modal";
 // import Gamelog from "./components/gamelog";\
 // import Clock from "./clock";
-import GameLeader from "./components/gameleader";
+// import GameLeader from "./components/gameleader";
 
-ReactDOM.render(<GameLeader />, document.querySelector("#app"));
+ReactDOM.render(<Index />, document.querySelector("#app"));
