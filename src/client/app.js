@@ -8,10 +8,7 @@
 
 import * as React from "react";
 import ReactDOM from "react-dom";
-<<<<<<< HEAD
-=======
 // import "../css/style.css";
->>>>>>> e90be79... Creating routes for logs & ladder
 import "../css/welcome.css";
 // import "../css/leaderboard.css";
 // import "../css/gamelog.css";

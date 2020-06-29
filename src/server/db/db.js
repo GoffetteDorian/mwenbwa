@@ -9,10 +9,13 @@
 const mongoose = require("mongoose");
 
 // require("dotenv").config();
+// const loc = "mongodb://mongo:27017/mwenbwa";
+const dist =
+    "mongodb+srv://@cluster0.trrcd.mongodb.net/mwenbwa?retryWrites=true&w=majority";
 
 mongoose
-    .connect("mongodb://mongo:27017/mwenbwa", {
-        auth: {authSource: "admin"},
+    .connect(dist, {
+        // auth: {authSource: "admin"},
         user: "dev",
         pass: "dev",
         useNewUrlParser: true,
@@ -23,4 +26,5 @@ mongoose
     });
 
 const db = mongoose.connection;
+console.log("DB LOGIN: ", db);
 export default db;

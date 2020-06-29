@@ -22,15 +22,10 @@ export const signup = async (req, res) => {
             color: req.body.color,
         });
 
-        await user.save((error, response) => {
-            if (error) {
-                return res.status(500).send({message: error});
-            }
-            setTreeOwner(response);
-            setTreeOwner(response);
-            setTreeOwner(response);
-            return true;
-        });
+        const response = await user.save();
+        setTreeOwner(response);
+        setTreeOwner(response);
+        setTreeOwner(response);
         return res.status(201).send({message: "User created"});
     } catch (error) {
         console.log(error);
