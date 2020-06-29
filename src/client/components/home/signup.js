@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import {GithubPicker} from "react-color";
 import {signup, signin} from "../../services/auth-service";
 
@@ -13,6 +13,7 @@ const Signup = () => {
     });
 
     const handleSubmit = event => {
+        console.log("Inside submit");
         event.preventDefault();
         const {email, username, password, passwordConfirm, color} = values;
         if (
@@ -32,7 +33,7 @@ const Signup = () => {
             .then(() => {
                 signin({email, password}).then(
                     () => {
-                        window.location.reload();
+                        window.location.replace("/");
                         console.log("Login ok");
                     },
                     err => console.log(err),
@@ -46,6 +47,7 @@ const Signup = () => {
     const handleChange = event => {
         const {name, value} = event.target;
         setValues({...values, [name]: value});
+        console.log(values);
     };
 
     const handleChangeComplete = color => {
@@ -139,13 +141,11 @@ const Signup = () => {
                 </div>
 
                 <div className={"field"} style={{textAlign: "center"}}>
-                    <Link to={"/map"}>
-                        <input
-                            type={"submit"}
-                            className={"button is-success"}
-                            value={"Register"}
-                        />
-                    </Link>
+                    <input
+                        type={"submit"}
+                        className={"button is-success"}
+                        value={"Register"}
+                    />
                 </div>
             </form>
         </div>

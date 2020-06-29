@@ -4,6 +4,7 @@ import {signin} from "../../services/auth-service";
 const Signin = () => {
     const [values, setValues] = useState({email: "", password: ""});
     const handleSubmit = event => {
+        console.log("Submit signin");
         event.preventDefault();
         const {email, password} = values;
         if (!email || !password) {
@@ -11,7 +12,7 @@ const Signin = () => {
         }
         signin(values)
             .then(() => {
-                window.location.reload();
+                window.location.replace("/");
                 console.log("Signed in");
             })
             .catch(error => {
