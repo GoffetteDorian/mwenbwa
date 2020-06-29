@@ -35,7 +35,7 @@ class Profil extends Component {
                     <span className={"sr-only"}>{"unread messages"}</span>
                 </button>
                 <form id={"formulaireProfil"}>
-                    <h1 id={"profilNameG"}>{"BONJOUR Geoffrey!"}</h1>
+                    <h1 id={"profilNameG"}>{"COMPTE: Geoffrey!"}</h1>
                     <img
                         id={"imageProfil"}
                         src={arbre}

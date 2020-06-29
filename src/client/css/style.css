@@ -3,6 +3,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+    overflow: hidden;
 }
 
 .leaflet-container {
@@ -56,8 +57,8 @@ body {
 }
 #leaf {
     position: relative;
-    top: 5px;
-    left: 5px;
+    top: 150px;
+    left: 250px;
 }
 #cercleLeaf {
     width: 40px;
@@ -121,6 +122,8 @@ body {
 #profil-picture {
     border-radius: 20px;
     border: 2px solid #9a9da0;
+    position: relative;
+    top: 10px;
 }
 
 /* #button-profil {
@@ -137,6 +140,7 @@ body {
     position: relative;
     left: 25px;
     padding: 1px 1px 1px 1px;
+    margin-bottom: 5px;
 }
 .login-form {
     width: 385px;

@@ -13,16 +13,18 @@ import "../css/welcome.css";
 import "../css/leaderboard.css";
 import "../css/gamelog.css";
 import "../css/modal.css";
-
+import "../css/signin-up.css";
 import "./css/style.css";
 
-//import Welcome from "./components/home/welcome";
-//import Design from "../client/components/design";
-import Map from "../client/components/map/leaflet";
-//import Clock from "../client/components/timerNow";
+import Index from "./components/home/index";
+// import Timers from "./components/timers";
+// import ReceiveLoseLeaves from "./components/receiveLoseLeaves";
+// import ColorPicker from "./components/color-picker";
+// import Leaderboard from "./components/leaderboard";
+// import Welcome from "./components/home/welcome";
+// import Popup from "./components/modal";
+// import Gamelog from "./components/gamelog";
+// import Clock from "./clock";
 //import Profil from "../profil";
-// import Inscription from "../inscription";
-// import Leaflet from "./components/map/leaflet";
-// import Login from "./components/home/login";
 
-ReactDOM.render(<Map />, document.querySelector("#app"));
+ReactDOM.render(<Index />, document.querySelector("#app"));
