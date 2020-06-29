@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {GithubPicker} from "react-color";
+import {signup, signin} from "../../services/auth-service";
 
-const Signup = ({register, login}) => {
+const Signup = () => {
     const [values, setValues] = useState({
         email: "",
         username: "",
@@ -24,12 +25,12 @@ const Signup = ({register, login}) => {
         ) {
             return;
         }
-        register(values)
+        signup(values)
             .then(() => {
                 console.log("Register ok");
             })
             .then(() => {
-                login({email, password}).then(
+                signin({email, password}).then(
                     () => {
                         window.location.reload();
                         console.log("Login ok");
@@ -138,7 +139,7 @@ const Signup = ({register, login}) => {
                 </div>
 
                 <div className={"field"} style={{textAlign: "center"}}>
-                    <Link to={"/ntmfdp"}>
+                    <Link to={"/map"}>
                         <input
                             type={"submit"}
                             className={"button is-success"}

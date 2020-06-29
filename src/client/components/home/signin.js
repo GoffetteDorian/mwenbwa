@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import {signin} from "../../services/auth-service";
 
-const Signin = ({login}) => {
+const Signin = () => {
     const [values, setValues] = useState({email: "", password: ""});
     const handleSubmit = event => {
         event.preventDefault();
@@ -8,10 +9,10 @@ const Signin = ({login}) => {
         if (!email || !password) {
             return;
         }
-        login(values)
+        signin(values)
             .then(() => {
-                console.log("Signed in");
                 window.location.reload();
+                console.log("Signed in");
             })
             .catch(error => {
                 console.log(error);

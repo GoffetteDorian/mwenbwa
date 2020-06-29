@@ -35,7 +35,7 @@ const Index = () => {
     return (
         <>
             <Router>
-                <Route exact path={"/ntmfdp"} component={Leaflet} />
+                <Route exact path={"/map"} component={Leaflet} />
                 <Route exact path={"/"} component={Welcome} />
                 <Route exact path={"/login"} component={Login} />
                 <Route exact path={"/signin"} component={Signin} />
