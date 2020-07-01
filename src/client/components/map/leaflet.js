@@ -38,74 +38,74 @@ const Leaflet = () => {
     // }
 
     return (
-        <Map
-            className={"markercluster-map"}
-            onDragend={handleDrag}
-            center={[50.63, 5.58]}
-            zoom={16}>
-            <TileLayer
-                url={
-                    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-                }
-                attribution={`&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`}
-                subdomains={"abcd"}
-                maxZoom={19}
-            />
-            <MarkerClusterGroup>
-                {nearbyTrees.map(tree => (
-                    <Tree
-                        key={`tree-${tree._id}`}
-                        coords={[tree.geoloc.lat, tree.geoloc.lon]}
-                        tooltip={tree.owner}
-                    />
-                ))}
-            </MarkerClusterGroup>
-            <div>
-                <div className={"fixed-top"}>
-                    <div
-                        className={"collapse"}
-                        id={"navbarToggleExternalContent"}>
-                        <div className={"bg-dark p-4"}>
-                            <div className={"image-profil"}>
-                                <img
-                                    src={imageAvatar}
-                                    alt={"profil-picture"}
-                                    id={"profil-picture"}
-                                    height={"100px"}
-                                    width={"100px"}
-                                />
-                            </div>
-                            <div id={"button-profil"}>
-                                <button type={"submit"} className={"button"}>
-                                    {"Profil"}
-                                </button>
-                                <button type={"submit"} className={"button"}>
-                                    {"Deconnexion"}
-                                </button>
-                                <div className={"button colorPlayer"} />
-                            </div>
+        <>
+            <div className={"fixed-top"}>
+                <div className={"collapse"} id={"navbarToggleExternalContent"}>
+                    <div className={"bg-dark p-4"}>
+                        <div className={"image-profil"}>
+                            <img
+                                src={imageAvatar}
+                                alt={"profil-picture"}
+                                id={"profil-picture"}
+                                height={"100px"}
+                                width={"100px"}
+                            />
+                        </div>
+                        <div id={"button-profil"}>
+                            <button type={"submit"} className={"button"}>
+                                {"Profil"}
+                            </button>
+                            <button type={"submit"} className={"button"}>
+                                {"Logout"}
+                            </button>
+                            <div className={"button colorPlayer"} />
                         </div>
                     </div>
-
-                    <nav className={"navbar navbar-dark bg-dark test"}>
-                        <button
-                            className={"navbar-toggler"}
-                            type={"button"}
-                            data-toggle={"collapse"}
-                            data-target={"#navbarToggleExternalContent"}
-                            aria-controls={"navbarToggleExternalContent"}
-                            aria-expanded={"false"}
-                            aria-label={"Toggle navigation"}>
-                            <span className={"navbar-toggler-icon"} />
-                        </button>
-                        <div id={"timerContener"}>
-                            <p id={"timer"}>{<Clock />}</p>
-                        </div>
-                        <ReceiveLoseLeaves />
-                    </nav>
                 </div>
+
+                <nav
+                    className={"navbar navbar-dark bg-dark"}
+                    style={{height: "100px"}}>
+                    <button
+                        className={"navbar-toggler"}
+                        type={"button"}
+                        data-toggle={"collapse"}
+                        data-target={"#navbarToggleExternalContent"}
+                        aria-controls={"navbarToggleExternalContent"}
+                        aria-expanded={"false"}
+                        aria-label={"Toggle navigation"}>
+                        <span className={"navbar-toggler-icon"} />
+                    </button>
+                    <div id={"timerContener"}>
+                        <p id={"timer"}>{<Clock />}</p>
+                    </div>
+                    <ReceiveLoseLeaves />
+                </nav>
             </div>
-        </Map>
+            <Map
+                className={"markercluster-map"}
+                onDragend={handleDrag}
+                center={[50.63, 5.58]}
+                zoom={16}>
+                <TileLayer
+                    url={
+                        "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                    }
+                    attribution={`&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`}
+                    subdomains={"abcd"}
+                    maxZoom={19}
+                />
+                <MarkerClusterGroup>
+                    {nearbyTrees.map(tree => (
+                        <Tree
+                            key={`tree-${tree._id}`}
+                            coords={[tree.geoloc.lat, tree.geoloc.lon]}
+                            tooltip={tree.owner}
+                        />
+                    ))}
+                </MarkerClusterGroup>
+            </Map>
+        </>
     );
 };
 export default Leaflet;
