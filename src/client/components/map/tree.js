@@ -7,15 +7,12 @@
  */
 
 import React from "react";
-import {Marker, Tooltip} from "react-leaflet";
+import {Marker, Popup} from "react-leaflet";
 
-const Tree = props => {
-    const {coords, tooltip} = props;
-    return (
-        <Marker position={coords}>
-            <Tooltip>{tooltip}</Tooltip>
-        </Marker>
-    );
-};
+const Tree = ({coords, tree, icon}) => (
+    <Marker icon={icon} position={coords}>
+        <Popup>{tree.owner ? tree.owner : "For sale"}</Popup>
+    </Marker>
+);
 
 export default Tree;

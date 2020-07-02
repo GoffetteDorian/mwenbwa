@@ -4,6 +4,7 @@ import Users from "../models/user-model";
 import {ROUNDS} from "../data/constants";
 
 import {setTreeOwner} from "./tree-controller";
+// import {setLeavesByUsername} from "./user-controller";
 // require("dotenv").config();
 
 const bcrypt = require("bcryptjs");
@@ -20,9 +21,12 @@ export const signup = async (req, res) => {
             email: req.body.email,
             role: "user",
             color: req.body.color,
+            leaves: req.body.leaves,
+            trees: req.body.trees,
         });
 
         const response = await user.save();
+
         setTreeOwner(response);
         setTreeOwner(response);
         setTreeOwner(response);
@@ -42,6 +46,8 @@ export const signin = async (req, res) => {
             password,
             role,
             color,
+            leaves,
+            trees,
         } = await Users.findOne({
             email: req.body.email,
         });
@@ -56,9 +62,17 @@ export const signin = async (req, res) => {
         }
         const token = jwt.sign({id}, accessTokenSecret, {expiresIn: 86400});
 
-        return res
-            .status(200)
-            .send({id, email, username, password, role, color, token});
+        return res.status(200).send({
+            id,
+            email,
+            username,
+            password,
+            role,
+            color,
+            token,
+            leaves,
+            trees,
+        });
     } catch (error) {
         console.log(error);
         return res.status(500).send({error});

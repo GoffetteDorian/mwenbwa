@@ -16,6 +16,8 @@ const User = new Schema(
         password: {type: String},
         role: {type: String},
         color: {type: String},
+        leaves: {type: Number},
+        trees: {type: Number},
     },
     {collection: "users"},
 );

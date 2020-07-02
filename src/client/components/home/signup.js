@@ -10,10 +10,11 @@ const Signup = () => {
         password: "",
         passwordConfirm: "",
         color: "",
+        leaves: 0,
+        trees: 0,
     });
 
     const handleSubmit = event => {
-        console.log("Inside submit");
         event.preventDefault();
         const {email, username, password, passwordConfirm, color} = values;
         if (

@@ -33,3 +33,15 @@ export const getUserByUsername = async (req, res) => {
         return res.status(200).json({success: true, data: user});
     }).catch(err => console.log(err));
 };
+
+export const setLeavesByUsername = async (req, res) => {
+    try {
+        const user = await Users.updateOne(
+            {username: req.username},
+            {$set: {leaves: req.leaves}},
+        );
+        return res.status(201).send({user});
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+};

@@ -11,19 +11,30 @@ import React, {useEffect, useState} from "react";
 import {Map, TileLayer} from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Tree from "./tree";
-// import imageFeuille from "../../../images/leafG.png";
-// import imageArbre from "../../images/treeG.png";
 import imageAvatar from "../../../images/avatar.png";
 import ReceiveLoseLeaves from "../receiveloseleaves";
 import Clock from "../timernow";
-// import {Marker} from "leaflet";
+import {getCurrentUser} from "../../services/auth-service";
+import {iconURL} from "./icon";
+import * as L from "leaflet";
 
 const Leaflet = () => {
     const [nearbyTrees, setNearbyTrees] = useState([]);
+    const [user] = useState(getCurrentUser());
+    const [userIcon, setUserIcon] = useState();
+    const [icon, setIcon] = useState();
 
-    // console.log("RENDER");
+    const createIcon = (color = "#00FF00") =>
+        L.icon({
+            iconUrl: iconURL(color),
+            iconSize: [25, 25],
+            iconAnchor: [25, 15],
+            popupAnchor: [0, -20],
+        });
+
     useEffect(() => {
-        console.log(nearbyTrees);
+        setIcon(createIcon());
+        setUserIcon(createIcon(user.color));
     }, [nearbyTrees]);
 
     const handleDrag = e => {
@@ -32,10 +43,6 @@ const Leaflet = () => {
             .then(res => res.json())
             .then(result => setNearbyTrees(result.data));
     };
-
-    // const createIcon = () => {
-
-    // }
 
     return (
         <>
@@ -77,9 +84,9 @@ const Leaflet = () => {
                         <span className={"navbar-toggler-icon"} />
                     </button>
                     <div id={"timerContener"}>
-                        <p id={"timer"}>{<Clock />}</p>
+                        <div id={"timer"}>{<Clock />}</div>
                     </div>
-                    <ReceiveLoseLeaves />
+                    <ReceiveLoseLeaves user={user} />
                 </nav>
             </div>
             <Map
@@ -101,6 +108,10 @@ const Leaflet = () => {
                             key={`tree-${tree._id}`}
                             coords={[tree.geoloc.lat, tree.geoloc.lon]}
                             tooltip={tree.owner}
+                            icon={
+                                tree.owner === user.username ? icon : userIcon
+                            }
+                            tree={tree}
                         />
                     ))}
                 </MarkerClusterGroup>
