@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost/api/auth/";
+const {API_URL} = process.env;
 
 export const signup = ({
     email,
@@ -11,7 +11,7 @@ export const signup = ({
     leaves,
     trees,
 }) =>
-    axios.post(`${URL}signup`, {
+    axios.post(`${API_URL}/auth/signup`, {
         email,
         username,
         password,
@@ -23,7 +23,7 @@ export const signup = ({
 
 export const signin = ({email, password}) =>
     axios
-        .post(`${URL}signin`, {
+        .post(`${API_URL}/auth/signin`, {
             email,
             password,
         })
