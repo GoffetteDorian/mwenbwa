@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const {API_URL} = process.env;
+console.log(API_URL);
 
 export const signup = ({
     email,
