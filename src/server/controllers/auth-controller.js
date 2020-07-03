@@ -9,8 +9,7 @@ import {setTreeOwner} from "./tree-controller";
 
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
-const accessTokenSecret = "Mwenbwa is awesome as a secret";
+const {SECRET} = process.env;
 
 export const signup = async (req, res) => {
     try {
@@ -60,7 +59,7 @@ export const signin = async (req, res) => {
                 .status(401)
                 .send({token: null, message: "Wrong password"});
         }
-        const token = jwt.sign({id}, accessTokenSecret, {expiresIn: 86400});
+        const token = jwt.sign({id}, SECRET, {expiresIn: 86400});
 
         return res.status(200).send({
             id,

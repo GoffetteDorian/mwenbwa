@@ -7,17 +7,15 @@
  */
 
 const mongoose = require("mongoose");
+const {DB_USERNAME, DB_PASSWORD} = process.env;
 
-// require("dotenv").config();
-// const loc = "mongodb://mongo:27017/mwenbwa";
 const dist =
     "mongodb+srv://@cluster0.trrcd.mongodb.net/mwenbwa?retryWrites=true&w=majority";
 
 mongoose
     .connect(dist, {
-        // auth: {authSource: "admin"},
-        user: "dev",
-        pass: "dev",
+        user: DB_USERNAME,
+        pass: DB_PASSWORD,
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
