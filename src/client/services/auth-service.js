@@ -12,7 +12,7 @@ export const signup = ({
     leaves,
     trees,
 }) =>
-    axios.post(`${API_URL}/auth/signup`, {
+    axios.post(`${API_URL}/api/auth/signup`, {
         email,
         username,
         password,
@@ -24,7 +24,7 @@ export const signup = ({
 
 export const signin = ({email, password}) =>
     axios
-        .post(`${API_URL}/auth/signin`, {
+        .post(`${API_URL}/api/auth/signin`, {
             email,
             password,
         })
