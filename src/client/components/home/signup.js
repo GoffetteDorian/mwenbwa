@@ -29,13 +29,9 @@ const Signup = () => {
         }
         signup(values)
             .then(() => {
-                console.log("Register ok");
-            })
-            .then(() => {
                 signin({email, password}).then(
                     () => {
                         window.location.replace("/");
-                        console.log("Login ok");
                     },
                     err => console.log(err),
                 );
@@ -48,14 +44,12 @@ const Signup = () => {
     const handleChange = event => {
         const {name, value} = event.target;
         setValues({...values, [name]: value});
-        console.log(values);
     };
 
     const handleChangeComplete = color => {
         setValues({...values, color: color.hex});
     };
 
-    // console.log(values);
     return (
         <div className={"signup-container"}>
             <form onSubmit={handleSubmit} className={"box"}>

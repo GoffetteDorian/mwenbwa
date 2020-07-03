@@ -13,26 +13,7 @@ import Signup from "./signup";
 const Index = () => {
     // eslint-disable-next-line no-unused-vars
     const [user, setUser] = useState(getCurrentUser());
-    console.log("Token: ", user);
 
-    // if (user) {
-    //     return (
-    //         <Router>
-    //             <div></div>
-    //             <div>
-    //                 <Switch>
-    //                     <Route path={"/hello"}>{"hello"}</Route>
-    //                 </Switch>
-    //             </div>
-    //         </Router>
-    //     );
-    // }
-    // return (
-    //     <main>
-    //         <Welcome />
-    //         {/* <Login /> */}
-    //     </main>
-    // );
     if (user) {
         return (
             <>

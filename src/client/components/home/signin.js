@@ -4,7 +4,6 @@ import {signin} from "../../services/auth-service";
 const Signin = () => {
     const [values, setValues] = useState({email: "", password: ""});
     const handleSubmit = event => {
-        console.log("Submit signin");
         event.preventDefault();
         const {email, password} = values;
         if (!email || !password) {
@@ -13,7 +12,6 @@ const Signin = () => {
         signin(values)
             .then(() => {
                 window.location.replace("/");
-                console.log("Signed in");
             })
             .catch(error => {
                 console.log(error);
@@ -23,7 +21,7 @@ const Signin = () => {
         const {name, value} = event.target;
         setValues({...values, [name]: value});
     };
-    console.log(values);
+
     return (
         <div className={"signin-container"}>
             <form onSubmit={handleSubmit} className={"box"}>

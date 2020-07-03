@@ -26,5 +26,4 @@ mongoose
     });
 
 const db = mongoose.connection;
-console.log("DB LOGIN: ", db);
 export default db;

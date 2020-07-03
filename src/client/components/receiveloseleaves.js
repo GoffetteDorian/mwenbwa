@@ -20,7 +20,7 @@ const ReceiveLoseLeaves = ({user}) => {
     // for 15m you should use 900000
 
     function fifteenMinutes() {
-        console.log(leaves);
+        // console.log(leaves);
         setTimeout(receiveLeaves, 3000);
     }
     // fifteenMinutes();

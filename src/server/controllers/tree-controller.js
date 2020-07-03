@@ -82,13 +82,12 @@ export const setTreeOwner = async (req, res) => {
 // DB SET UP
 export const updateAllOwners = async (req, res) => {
     try {
-        console.log("Updating");
         const response = await Trees.update(
             {},
             {$set: {owner: null}},
             {multi: true},
         );
-        console.log("resp");
+
         return res
             .status(201)
             .send({message: "Updated all owners", data: response});
