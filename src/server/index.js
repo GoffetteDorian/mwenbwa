@@ -19,7 +19,7 @@ const auth = require("./routes/auth-routes.js");
 const users = require("./routes/user-routes.js");
 const trees = require("./routes/tree-routes.js");
 
-const {APP_PORT} = process.env;
+const {APP_PORT, PORT} = process.env;
 
 const app = express();
 
@@ -41,6 +41,6 @@ app.use("/api/auth", auth);
 app.use("/api/users", users);
 app.use("/api/trees", trees);
 
-app.listen(APP_PORT, () =>
-    console.log(`🚀 Server is listening on port ${APP_PORT}.`),
+app.listen(PORT || APP_PORT, () =>
+    console.log(`🚀 Server is listening on port ${PORT || APP_PORT}.`),
 );
